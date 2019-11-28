@@ -15,11 +15,45 @@
     
 """
 
-def ask_user():
+def dict_create():
     """
-    Замените pass на ваш код
+    В этой функции пользователь
+    сам создаёт словарь посредством 
+    ввода с клавиатуры.
+    """    
+    dictionary = {}
+    print("Чтобы остановить наполнение словаря введите 'стоп'.\n")
+    while True:
+        question = input("Введите вопрос:\n".lower())
+        if question.lower() == "стоп":
+            print("ну лан \n")
+            break
+        dictionary[question.lower()] = input("Введите ответ: \n")
+        
+    return dictionary
+
+def ask_user(dictionary):
     """
-    pass
-    
+    Эта функция отвечает
+    на вопросы пользователя,
+    используя значения ключей словаря,
+    созданного выше.
+    """                                                                
+    print("Добро пожаловать в гости к Чат-Боту3000 \nЖду Ваших вопросов")
+    while True:
+        user_ask = input("user: ")
+        if user_ask.lower() == "пока":
+            print("До скорого.")
+            break
+        elif user_ask.lower() in dictionary.keys():
+            print(f"Чат-Бот3000: {dictionary.get(user_ask)}")
+        else:
+            print("Мне нечего тебе сказать")
+
+def main():
+    qwe = dict_create()
+    ask_user(qwe)
+
 if __name__ == "__main__":
-    ask_user()
+    main()
+
