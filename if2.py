@@ -21,7 +21,7 @@ def main(string_one, string_two):
     В ней надо заменить pass на ваш код
     """
 
-    if string_one == "" or string_two == "":
+    if string_one == "" or string_two == "" or not isinstance(string_one, str) or not isinstance(string_two, str):
         return 0
     elif string_one == string_two:
         return 1
