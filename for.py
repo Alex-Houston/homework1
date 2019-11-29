@@ -18,14 +18,14 @@ def main():
     ]
     all_scores = 0
     all_students = 0
-    for counter in lst:
+    for class_counter in lst:
         class_scores = 0
-        for qwerty in counter['scores']:
-            class_scores += qwerty
-        print(f"Средний балл в {counter['school_class']}: ", class_scores/len(counter['scores']))
+        for scores_counter in class_counter['scores']:
+            class_scores += scores_counter
+        print(f"Средний балл в {class_counter['school_class']}: ", class_scores/len(class_counter['scores']))
         all_scores += class_scores
-        all_students += len(counter['scores'])
-    print("Средний балл всех учеников: ", all_scores/all_students)
+        all_students += len(class_counter['scores'])
+    print(f"Средний балл всех учеников: {all_scores/all_students}")
     
     
 if __name__ == "__main__":

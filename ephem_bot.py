@@ -34,7 +34,7 @@ PROXY = {
 
 
 def greet_user(bot, update):
-    text = 'Зачем меня призвали?'
+    text = "Зачем меня призвали?"
     print(text)
     update.message.reply_text(text)
 
@@ -54,9 +54,13 @@ def constellation_check(bot, update):
                       "Saturn": ephem.constellation(ephem.Saturn(datetime.now())), 
                       "Uranus": ephem.constellation(ephem.Uranus(datetime.now())), 
                       "Neptune": ephem.constellation(ephem.Neptune(datetime.now())), }
-    text_for_user = constellations.get(planet)
-    print(text_for_user)
-    update.message.reply_text(text_for_user)
+    if planet in constellations:
+        text_for_user = constellations.get(planet)
+        print(text_for_user)
+        update.message.reply_text(text_for_user)
+    else:
+        update.message.reply_text("Такой планеты не существует.")
+
  
 
 def main():

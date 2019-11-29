@@ -14,7 +14,7 @@ def ask_user():
     """
     Замените pass на ваш код
     """
-    dictionary = {"как дела?": "Хорошо!", "что делаешь?": "Программирую"}
+    quest_and_answ = {"как дела?": "Хорошо!", "что делаешь?": "Программирую"}
     try:                                          
         print("Добро пожаловать в гости к Чат-Боту3000 \nЖду Ваших вопросов")
         while True:
@@ -22,9 +22,9 @@ def ask_user():
             if user_ask.lower() == "пока":
                 print("До скорого.")
                 break
-            elif user_ask.lower() in dictionary.keys():
-                print(f"Чат-Бот3000: {dictionary.get(user_ask)}")
-            elif user_ask.lower() not in dictionary.keys():
+            elif user_ask.lower() in quest_and_answ:
+                print(f"Чат-Бот3000: {quest_and_answ[user_ask]}")
+            elif user_ask.lower() not in quest_and_answ.keys():
                 print("У меня не ответа на твой вопрос.")
     except KeyboardInterrupt:
         print("\nЧат-Бот3000: Пока!")
